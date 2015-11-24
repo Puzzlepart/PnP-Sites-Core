@@ -121,6 +121,12 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.ObjectHandlers
 
         private static bool CheckOutIfNeeded(Web web, File targetFile)
         {
+            if (targetFile.Name.Contains("Form.aspx"))
+            {
+                // The target file is a form file, and can't be checked in / checked out
+                return false;
+            }
+
             var checkedOut = false;
             try
             {
