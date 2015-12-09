@@ -52,7 +52,7 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.ObjectHandlers
                     }
                     else
                     {
-                        if (ct.ReadOnly)
+                        if (existingCT.ReadOnly)
                         {
                             // Content Type is ready only
                             // We'll just continue
