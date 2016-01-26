@@ -53,7 +53,13 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.ObjectHandlers
                     }
                     else
                     {
-                        if (ct.Overwrite)
+                        if (existingCT.ReadOnly)
+                        {
+                            // Content Type is ready only
+                            // We'll just continue
+                            // Should use CoreResources to log a message
+                        }
+                        else if (ct.Overwrite)
                         {
                             scope.LogDebug(CoreResources.Provisioning_ObjectHandlers_ContentTypes_Recreating_existing_Content_Type___0_____1_, ct.Id, ct.Name);
 
